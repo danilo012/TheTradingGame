@@ -74,7 +74,7 @@ winpercent.onclick = function() {
   commas = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
   Swal.fire({
-    html: "<h1>Win Percentage</h1><span>You are " + num + "% profitable.<br>You've won "+ winTrades +" out of "+ allTrades +" total trades.<br><br><br>All trades have a 80% payback.<br>Assuming short term capital gains is "+ taxpercentage +"%.<br>You would owe approximately $"+ commas +" in taxes.</span>"
+    html: "<h1>Win Percentage</h1><span>You are " + num + "% profitable.<br>You've won "+ winTrades +" out of "+ allTrades +" total trades.<br><br><br>All trades have a 80% payback.<br>Assuming short term capital gains is "+ taxpercentage +"%.<br>You would owe approximately ₱"+ commas +" in taxes.</span>"
   });
 };
 
@@ -264,7 +264,7 @@ function wonTrade() {
   time = new Date().toLocaleString();
   
   // add new trade
-  $('.tradehistory').append('<div class="trade" data-result="win"><div><div class="currency"><i class="fa fa-btc"></i> '+ $('#cryptopairs a.blue').text() +'</div><div><i class="fa fa-envelope-open green"></i> '+ openTrade +'</div><div class="bet"><i class="fa fa-arrow-'+ direction +'"></i> $'+ parseInt(currentBal) +'</div></div><div><div class="time">'+ time +' <i class="fa fa-clock-o"></i></div><div>'+ closeTrade +' <i class="fa fa-envelope green"></i></div><div class="win">+'+ parseInt(currentWager) +' <i class="fa fa-usd"></i></div></div></div>');
+  $('.tradehistory').append('<div class="trade" data-result="win"><div><div class="currency"><i class="fa fa-btc"></i> '+ $('#cryptopairs a.blue').text() +'</div><div><i class="fa fa-envelope-open green"></i> '+ openTrade +'</div><div class="bet"><i class="fa fa-arrow-'+ direction +'"></i> ₱'+ parseInt(currentBal) +'</div></div><div><div class="time">'+ time +' <i class="fa fa-clock-o"></i></div><div>'+ closeTrade +' <i class="fa fa-envelope green"></i></div><div class="win">+'+ parseInt(currentWager) +' <i class="fa fa-php"></i></div></div></div>');
   
   // apply new balance
   balance.textContent = parseInt(currentWager + currentBal);
@@ -292,7 +292,7 @@ function lostTrade() {
   time = new Date().toLocaleString();
   
   // add new trade
-  $('.tradehistory').append('<div class="trade" data-result="loss"><div><div class="currency"><i class="fa fa-btc"></i> '+ $('#cryptopairs a.blue').text() +'</div><div><i class="fa fa-envelope-open red"></i> '+ openTrade +'</div><div class="bet"><i class="fa fa-arrow-'+ direction +'"></i> $'+ parseInt(currentBal) +'</div></div><div><div class="time">'+ time +' <i class="fa fa-clock-o"></i></div><div>'+ closeTrade +' <i class="fa fa-envelope red"></i></div><div class="loss">-'+ parseInt(currentWager) +' <i class="fa fa-usd"></i></div></div></div>');
+  $('.tradehistory').append('<div class="trade" data-result="loss"><div><div class="currency"><i class="fa fa-btc"></i> '+ $('#cryptopairs a.blue').text() +'</div><div><i class="fa fa-envelope-open red"></i> '+ openTrade +'</div><div class="bet"><i class="fa fa-arrow-'+ direction +'"></i> ₱'+ parseInt(currentBal) +'</div></div><div><div class="time">'+ time +' <i class="fa fa-clock-o"></i></div><div>'+ closeTrade +' <i class="fa fa-envelope red"></i></div><div class="loss">-'+ parseInt(currentWager) +' <i class="fa fa-php"></i></div></div></div>');
   
   // apply new balance
   balance.textContent = num;
@@ -301,7 +301,7 @@ function lostTrade() {
   if (currentWager >= num) {
     commas = num.toLocaleString('en-US');
     commas = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    wager.textContent = '$' + commas;
+    wager.textContent = '₱' + commas;
   
     // check and see if user didnt blow the account
     checkAcct();
