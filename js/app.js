@@ -218,8 +218,8 @@ function rememberTime() {
   }
 }
 function startOver() {
-  balance.textContent = "₱20";
-  wager.textContent = "₱3";
+  balance.textContent = "₱50";
+  wager.textContent = "₱2";
   winpercent.textContent = "0%";
       
   // now clear the history
