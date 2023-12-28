@@ -79,6 +79,24 @@ winpercent.onclick = function() {
 };
 
 // change your balance 
+balance.onclick  = function() {
+  if (!activeTrade) {
+    Swal.fire({
+      title: "Are you sure you wish to reset your balance?",
+      text: "This will erase everything!",
+    
+      inputValue: 1000,
+      inputAttributes: {
+        min: '1'
+      }
+    }).then((result) =>{
+      if (result.value) {
+        // first reset the balance
+        num = result.value;
+        commas = num.toLocaleString('en-US');
+        commas = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.textContent = '₱' + commas;
+        
         // calculate 25% of the users balance
         var newWager = parseInt(parseInt(num) * .25);
         newWager = newWager.toLocaleString('en-US');
