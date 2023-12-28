@@ -120,13 +120,7 @@ balance.onclick  = function() {
     })
   }
 };
-balance.onchange = function() {
-  num = this.textContent;
-  commas = num.toLocaleString('en-US');
-  commas = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  this.textContent = '₱' + commas;
-  rememberData();
-};
+
 
 // change your wager
 wager.onclick = function() {
