@@ -79,8 +79,7 @@ winpercent.onclick = function() {
 };
 
 // change your balance
-balance.onclick  = function() 
-     {
+balance.onclick  = function() {
   if (!activeTrade) {
     Swal.fire({
       title: "Are you sure you wish to reset your balance?",
@@ -90,7 +89,7 @@ balance.onclick  = function()
       inputAttributes: {
         min: '1'
       }
-    }).then((result) =>
+    }).then((result) =>{
       if (result.value) {
         // first reset the balance
         num = result.value;
