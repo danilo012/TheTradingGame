@@ -91,7 +91,11 @@ balance.onclick  = function() {
       }
     }).then((result) =>{
       if (result.value) {
-       
+        // first reset the balance
+        num = result.value;
+        commas = num.toLocaleString('en-US');
+        commas = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.textContent = '₱' + commas;
         
         // calculate 25% of the users balance
         var newWager = parseInt(parseInt(num) * .25);
